@@ -1,0 +1,81 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<header class="header" id="header">
+    <div class="header-inner">
+        <nav class="header-nav">
+            <div class="header-nav-inner">
+                <div class="header-nav-btn fa fa-bars"></div>
+                <div class="header-nav-menu">
+                    <div class="header-nav-menu-item">
+                        <a class="header-nav-menu-item__a" href="/">
+                            <i class="fa fa-home"></i>
+                            首页 | HOME
+                        </a>
+                    </div>
+                    <div class="header-nav-menu-item">
+                        <a class="header-nav-menu-item__a" href="/archives/">
+                            <i class="fa fa-folder-open"></i>
+                            归档 | ARCHIVES
+                        </a>
+                    </div>
+                    <div class="header-nav-menu-item">
+                        <a class="header-nav-menu-item__a" href="/tags/">
+                            <i class="fa fa-tags"></i>
+                            标签 | TAGS
+                        </a>
+                    </div>
+                    <div class="header-nav-menu-item">
+                        <a class="header-nav-menu-item__a" href="javascript:;">
+                            <i class="fa fa-th"></i>
+                            其他 | OTHER
+                        </a>
+                        <div class="header-nav-submenu">
+                            <div class="header-nav-menu-item">
+                                <a class="header-nav-menu-item__a" href="/index1/">
+                                    <i class="fa fa-male"></i>
+                                    小 index1
+                                </a>
+                            </div>
+                            <div class="header-nav-menu-item">
+                                <a class="header-nav-menu-item__a" href="/index2/">
+                                    <i class="fa fa-female"></i>
+                                    小 index2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-nav-menu-item">
+                        <a class="header-nav-menu-item__a" href="/about/">
+                            <i class="fa fa-user"></i>
+                            关于 | ABOUT
+                        </a>
+                    </div>
+                </div>
+                <div class="header-nav-search">
+                    <i class="fa fa-search"></i>
+                    <span>搜索</span>
+                </div>
+                <div class="header-nav-mode">
+                    <div class="mode">
+                        <div class="mode-track">
+                            <span class="mode-track-moon"></span>
+                            <span class="mode-track-sun"></span>
+                        </div>
+                        <div class="mode-thumb"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-info">
+            <div class="header-info-inner">
+                <div class="header-info-title">Jeremy's Blog</div>
+                <div class="header-info-subtitle">write code and love life</div>
+            </div>
+            <div class="header-info-scrolldown">
+                <i class="fa fa-angle-down header-info-scrolldown__icon"></i>
+            </div>
+        </div>
+    </div>
+</header>
+

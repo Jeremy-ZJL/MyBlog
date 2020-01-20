@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+{# 网页标题 #}
+{% block title %}
+    <title>文章详情</title>
+{% endblock title %}
+
+{# 文章区域 #}
+{% block content %}
+    <div class="content">
+        <div class="post">
+            {# 文章头部 #}
+            {% include 'common/post-header.html' %}
+
+            <div class="highlight">
+                <p>{{ article.body | safe }}</p>
+            </div>
+
+            {# 文章尾部 #}
+            {% include 'common/post-footer.html' %}
+        </div>
+    </div>
+{% endblock content %}
+
+
+{# 左侧栏 #}
+{% block zuo_ce_lan %}
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-nav">
+                <span class="sidebar-nav-toc current">文章目录</span>
+                <span class="sidebar-nav-ov">站点概览</span>
+            </div>
+            <section class="sidebar-toc">
+                <div>
+                    <P>{{ article.toc|safe }}</P>
+{#                    <a href="javascript:void(0);" class="backtop">返回顶部</a>#}
+                </div>
+            </section>
+            <!-- ov = overview -->
+            <section class="sidebar-ov hide">
+                <div class="sidebar-ov-author">
+                    <div class="sidebar-ov-author__avatar">
+                        <img class="sidebar-ov-author__avatar_img"
+                             src="{% static 'images/avatar/j-icon-225.png' %}" alt="avatar">
+                    </div>
+                    <p class="sidebar-ov-author__p">hello world</p>
+                </div>
+                <div class="sidebar-ov-social">
+                    <a class="sidebar-ov-social__item" href="https://github.com/"
+                       target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up">
+                        <i class="sidebar-ov-social__item--icon fa fa-github"></i>
+                    </a>
+                    <a class="sidebar-ov-social__item" href="https://juejin.im/"
+                       target="_blank" rel="noopener" data-popover="掘金" data-popover-pos="up">
+                        <span class="sidebar-ov-social__item--logo">掘</span>
+                    </a>
+                </div>
+                <div class="sidebar-ov-state">
+                    <a class="sidebar-ov-state__a posts" href="/archives/">
+                        <div class="sidebar-ov-state__a--count">14</div>
+                        <div class="sidebar-ov-state__a--name">归档</div>
+                    </a>
+                    <a class="sidebar-ov-state__a tags" href="/tags/">
+                        <div class="sidebar-ov-state__a--count">3</div>
+                        <div class="sidebar-ov-state__a--name">标签</div>
+                    </a>
+                </div>
+                <div class="sidebar-ov-cc">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn"
+                       target="_blank" rel="noopener" data-popover="知识共享"
+                       data-popover-pos="up">
+                        <img src="{% static 'images/cc-by-nc-sa.svg' %}" alt="知识共享">
+                    </a>
+                </div>
+            </section>
+            <div class="sidebar-reading">
+                <div class="sidebar-reading-info">
+                    <span>你已阅读了 </span>
+                    <span class="sidebar-reading-info-num"></span>
+                </div>
+                <div class="sidebar-reading-line"></div>
+            </div>
+    </aside>
+{% endblock zuo_ce_lan %}
+
+
+
+
+
+
+
+
+

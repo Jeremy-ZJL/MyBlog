@@ -1,0 +1,115 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base-1.html" %}
+
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+{% block title %}
+    Jeremy博客首页
+{% endblock title %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock css %}
+
+{% block write %}
+    {#        <li>#}
+    {#            <a class="nav-link" href="/article/article-create/?id={{ user_id }}">写文章</a>#}
+    {#        </li>#}
+{% endblock write %}
+
+{% block content %}
+    <article>
+        <!--lbox begin-->
+        <div class="lbox">
+            <div>
+                <img src="{% static 'images/lunbotu1.jpg' %}" alt="" style="width: 900px">
+            </div>
+            {#文章列表#}
+            {% include 'article/art_list.html' %}
+
+        </div>
+        <div class="rbox">
+            <div class="card">
+                <h2>我的名片</h2>
+                <p>◆ Jeremy</p>
+                <p>◆ Python开发</p>
+                {#<p>◆ 四川省-成都市</p>#}
+                <p>◆ www.jeremyzhang.xyz</p>
+                {#<ul class="linkmore">#}
+                {#    <li>#}
+                {#        <a href="index.html#" target="_blank" class="iconfont icon-zhuye" title="网站地址"></a>#}
+                {#    </li>#}
+                {#    <li>#}
+                {#        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E"#}
+                {#           target="_blank" class="iconfont icon-youxiang" title="我的邮箱"></a>#}
+                {#    </li>#}
+                {#    <li>#}
+                {#        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=476847113&amp;site=qq&amp;menu=yes" target="_blank"#}
+                {#           class="iconfont icon---" title="QQ联系我"></a>#}
+                {#    </li>#}
+                {#    <li id="weixin">#}
+                {#        <a href="index.html#" target="_blank" class="iconfont icon-weixin" title="关注我的微信"></a>#}
+                {#        <i><img src="{% static 'images/wx.png' %}" alt=""/></i>#}
+                {#    </li>#}
+                {#</ul>#}
+            </div>
+            {#<div class="whitebg notice">#}
+            {#<h2 class="htitle">网站公告</h2>#}
+            {#<ul>#}
+            {#<li><a href="#">十条设计原则教你学会如何设计网页布局!</a></li>#}
+            {#</ul>#}
+            {#</div>#}
+            <div class="whitebg paihang">
+                <h2 class="htitle">推荐文章</h2>
+                <section class="topnews imgscale">
+                    <a href="http://v.bootstrapmb.com/">
+                        <img src="{% static 'images/324575.jpg' %}" alt=""/>
+                        <span></span>
+                    </a>
+                </section>
+                <ul>
+                    <li>
+                        <i></i><a href="http://v.bootstrapmb.com/">十条设计原则教你学会如何设计网页布局!</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ad whitebg imgscale">
+                <ul>
+                    <li>
+                        <a href="http://v.bootstrapmb.com/">
+                            <img src="{% static 'images/ad.jpg' %}" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="whitebg tongji">
+                <h2 class="htitle">站点信息</h2>
+                <ul>
+                    <li><b>建站时间</b>：2019-10-19</li>
+                    <li><b>文章统计</b>：{{ art_obj_count }}</li>
+                    <li><b>文章评论</b>：490条</li>
+                    {#<li><b>微信公众号</b>：扫描二维码，关注我们</li>#}
+                    {#<li><img src="{% static 'images/wxgzh.jpg' %}" class="tongji_gzh" alt=""/></li>#}
+                </ul>
+            </div>
+            <div class="links whitebg">
+                <h2 class="htitle">
+                    <span class="sqlink"><a href="#">申请链接</a></span>
+                    友情链接
+                </h2>
+                <ul>
+                    <li><a href="#" target="_blank">xxxxxxxx</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
+
+{% block top %}
+    <a href="{% url 'article:index' %}">
+        <div class="top"></div>
+    </a>
+{% endblock top %}
+
+

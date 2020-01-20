@@ -1,0 +1,404 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {#<link rel="manifest" href="manifest.json"/>#}
+    <meta charset="UTF-8"/>
+    <title>Liuyib's Blog</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="keywords" content="liuyib, Liuyib's Blog"/>
+    <meta name="description" content="博客，分享，开源，心得"/>
+    <meta name="google-site-verification" content="_dxRdKposlAngL4xRoCTrJu0sZ7Pp_RhlBF9inxcD5w"/>
+    <meta name="msvalidate.01" content="6A508F795A82FADAC671AFCB9848929F"/>
+    <meta name="baidu-site-verification" content="UYjZUCoORR"/>
+    <meta name="360-site-verification" content="b926bfcb0e6034f32ac4700700a812f5"/>
+    <meta name="theme-color" content="#54bcff"/>
+
+    <link rel="icon" href="{% static 'images/icons/favicon-16x16.png' %}" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="{% static 'images/icons/favicon-32x32.png' %}" type="image/png" sizes="32x32"/>
+    {#<link rel="alternate" href="atom.xml" type="application/atom+xml"/>#}
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+    {# dns加速 #}
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+    <link rel="dns-prefetch" href="https://tajs.qq.com"/>
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/gitalk.min.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+
+    <script src="{% static 'js/googlet-UA.js' %}" async="" data-pjax=""></script>
+    <script data-pjax="">if ("localhost" !== window.location.hostname) {
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+
+        window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-146413033-1")
+    }</script>
+    <script>
+        var _hmt = _hmt || [];
+        !function () {
+            var t = document.createElement("script");
+            t.src = "https://hm.baidu.com/hm.js?2be584e2ddc153d81489b57ba106c8c0", t.async = !0, t.setAttribute("data-pjax", "");
+            var e = document.getElementsByTagName("script")[0];
+            e.parentNode.insertBefore(t, e)
+        }()
+    </script>
+    <script>
+        !function () {
+            var t = document.createElement("script");
+            t.src = "https://tajs.qq.com/stats?sId=66465986", t.async = !0, t.setAttribute("data-pjax", "");
+            var e = document.getElementsByTagName("script")[0];
+            e.parentNode.insertBefore(t, e)
+        }()
+    </script>
+    <script>
+        var Stun = window.Stun || {}, CONFIG = {
+            root: "/",
+            algolia: void 0,
+            fontawesome: {prefix: "fa"},
+            sidebar: {offsetTop: "30px", renderTocDepth: 4},
+            header: {scrollDownIcon: !0},
+            back2top: {enable: !0},
+            reward: !0,
+            fancybox: !1,
+            zoom_image: {enable: !0, mask_color: "rgba(0,0,0,0.6)"},
+            gallery_waterfall: {enable: !0, col_width: "220px", gap_x: "10px", gap_y: "10px"},
+            lazyload: {enable: !0, placeholder: "gif"},
+            pjax: {scrollTo2screen: !0},
+            external_link: {icon: {enable: !0, name: "external-link"}},
+            shortcuts: {switch_post: !0},
+            prompt: {copy_success: "复制成功", copy_error: "复制失败", creative_commons: "知识共享", copy_button: "点击复制"}
+        };
+        window.CONFIG = CONFIG
+    </script>
+</head>
+<body>
+<div class="container" id="container">
+
+    {# 头部 #}
+    {% include 'common/header.html' %}
+
+    <main class="main" id="main">
+        <div class="main-inner">
+            <div class="content-wrap" id="content-wrap">
+                <div class="content content-home">
+                    <section class="post-list">
+                        {#                        <article class="post post-link-title">#}
+                        {#                            <header class="post-header">#}
+                        {#                                <div class="sticky-top" data-popover="置顶文章" data-popover-pos="up">#}
+                        {#                                    <i class="sticky-top__i fa fa-thumb-tack"></i>#}
+                        {#                                </div>#}
+                        {#                                <h1 class="post-header-title"><a class="post-header-title__a"#}
+                        {#                                                                 href="https://gitter.im/liuyib/hexo-theme-stun?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link"#}
+                        {#                                                                 target="_blank" rel="noopener">theme-stun-gitter</a>#}
+                        {#                                </h1>#}
+                        {#                            </header>#}
+                        {#                            <div class="post-body">#}
+                        {#                                <img src="https://raw.githubusercontent.com/liuyib/picBed/master/hexo-blog/cover-img/20190911000324.jpg"/>#}
+                        {#                                <div class="post-body-excerpt">#}
+                        {#                                    <p>This is a link for Gitter of theme-stun. Clicking on the title to talking.</p>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </article>#}
+                        <article class="post">
+                            <header class="post-header">
+                                <h1 class="post-header-title">
+                                    <a class="post-header-title__a" href="2019/09/24/use-pjax-to-your-site/index.html">
+                                        集成 Pjax 实现网站无刷新加载
+                                    </a>
+                                </h1>
+                                <div class="post-header-meta">
+                                    <span class="post-header-meta-create">
+                                        <i class="fa fa-calendar-o"></i>
+                                        <span>发表于 </span>
+                                        <span>2019-09-24</span>
+                                    </span>
+                                    <span class="post-header-meta-update">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>更新于 </span>
+                                        <span>2019-11-16</span>
+                                    </span>
+                                    <span class="post-header-meta-word-count">
+                                        <i class="fa fa-file-word-o"></i>
+                                        <span>字数统计 </span>
+                                        <span>2.1k</span>
+                                    </span>
+                                    <span class="post-header-meta-reading-time">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>阅读时长 </span>
+                                        <span>14m</span>
+                                    </span>
+                                </div>
+                            </header>
+                            <div class="post-body">
+                                <div class="post-body-excerpt">
+                                    <h2 id="前言"><span class="heading-link">前言</span></h2>
+                                    <p>
+                                        一般情况下，当我们点击一个网页链接后，浏览器就会努力发送网络请求，然后将请求到的网页渲染出来。有时，我们经常会在一个网站中不停地点击链接，然后网页不停地跳转。通常，浏览器会对文件资源进行一定的缓存，这样使得同一个网站之间的页面跳转时，能够更快的加载。
+                                    </p>
+                                    <p>
+                                        虽然浏览器对资源的缓存加快了页面的加载速度，但是页面每一次跳转时，都会整体刷新一次，这一定程度上降低了用户体验。为了解决这一问题，我们可以使用 Pjax
+                                        实现网站无刷新加载。
+                                    </p>
+                                </div>
+                                <div class="post-body-more">
+                                    <a class="post-body-more__a" href="2019/09/24/use-pjax-to-your-site/index.html">阅读全文&raquo;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                    <nav class="paginator">
+                        <div class="paginator-inner">
+                            <span class="page-number current">1</span>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            {# 信息栏 #}
+            {% include 'common/XinXiLan.html' %}
+
+            <div class="clearfix"></div>
+        </div>
+    </main>
+
+    {# 脚部 #}
+    {% include 'common/footer.html' %}
+
+    <div class="loading-bar" id="loading-bar">
+        <div class="progress"></div>
+    </div>
+    <div class="back2top" id="back2top">
+        <i class="back2top-icon fa fa-rocket"></i>
+    </div>
+</div>
+<div class="search-mask"></div>
+<div class="search-popup">
+    <span class="search-close"></span>
+    <div class="search-input">
+        <input placeholder="搜索文章（支持多关键词，请用空格分隔）"/>
+    </div>
+    <div class="search-results"></div>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/velocity.min.js' %}"></script>
+<script src="{% static 'js/velocity.ui.min.js' %}"></script>
+<script src="{% static 'js/ribbon.min.js' %}"></script>
+<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'js/lazyload.min.js' %}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        $(".header-nav-search").on("click", function (t) {
+            t.stopPropagation(), $("body").css("overflow", "hidden"),
+                $(".search-popup").addClass("show").velocity("stop").velocity("transition.expandIn", {
+                    duration: 300,
+                    complete: function () {
+                        $(".search-popup input").focus()
+                    }
+                }), $(".search-mask").velocity("stop").velocity("transition.fadeIn", {duration: 300}),
+                $.ajax({
+                    url: e,
+                    dataType: r ? "xml" : "json",
+                    async: !0,
+                    success: function (t) {
+                        var n = r ? $("entry", t).map(function () {
+                                return {
+                                    title: $("title", this).text(),
+                                    content: $("content", this).text(),
+                                    url: $("url", this).text()
+                                }
+                            }).get() : t,
+                            o = $(".search-input input"),
+                            i = $(".search-results"),
+                            m = {title: 100, content: 1},
+                            e = function () {
+                                var t = o.val().toLowerCase().trim(), x = t.split(/[\s]+/), $ = [];
+                                1 < x.length && x.push(t), 0 < t.length && n.forEach(function (t) {
+                                    var e = !1, n = t.title && t.title.trim() || "( 文章无标题 )", o = n && n.toLowerCase(),
+                                        i = t.content && t.content.replace(/<[^>]+>/g, ""), r = i && i.toLowerCase(),
+                                        c = t.url && decodeURI(t.url).replace(/\/{2,}/g, "/"), a = [], s = [];
+                                    x.forEach(function (t) {
+                                        function e(e, t, n, o) {
+                                            if (!e || !t) return [];
+                                            var i = 0, r = -1, c = [];
+                                            for (n || (e = e.toLowerCase(), t = t.toLowerCase()); -1 !== (r = t.indexOf(e, i));) {
+                                                var s = !1;
+                                                a.forEach(function (t) {
+                                                    t.index === r && t.word.length < e.length && (t.word = e, s = !0)
+                                                }), i = r + e.length, !s && c.push({index: r, word: e, weight: o})
+                                            }
+                                            return c
+                                        }
+
+                                        a = a.concat(e(t, o, !1, m.title)), s = s.concat(e(t, r, !1, m.content))
+                                    });
+                                    var l = a.length, u = s.length;
+                                    if ((0 < l || 0 < u) && (e = !0), e) {
+                                        function h(n, t, e, o) {
+                                            if (n && t && t.length) {
+                                                var i = "", r = e, c = o;
+                                                return t.forEach(function (t) {
+                                                    if (!(t.index < r)) {
+                                                        var e = t.index + t.word.length;
+                                                        i += n.slice(r, t.index), i += "<b>" + n.slice(t.index, e) + "</b>", r = e
+                                                    }
+                                                }), i += n.slice(r, c)
+                                            }
+                                        }
+
+                                        [a, s].forEach(function (t) {
+                                            t.sort(function (t, e) {
+                                                return t.index - e.index
+                                            })
+                                        });
+                                        var d, f = {}, p = a.length * m.title + s.length * m.content,
+                                            v = h(n, a, 0, n.length) || n;
+                                        if (0 < s.length) {
+                                            var g = s[0].index, w = 20 < g ? g - 20 : 0, y = g + 180;
+                                            d = h(i, s, w, y)
+                                            055
+                                        } else d = i.slice(0, 200);
+                                        f.title = v, f.content = d, f.url = c, f.weight = p, $.push(f)
+                                    }
+                                });
+                                var e = "";
+                                $.length ? ($.sort(function (t, e) {
+                                    return e.weight - t.weight
+                                }),
+                                    e += "<ul>", $.forEach(function (t) {
+                                    e += '<li><a class="search-results-title" href="https://liuyib.github.io/' + t.url + '">', e += t.title, e += '</a><div class="search-results-content">', e += t.content, e += "</div></li>"
+                                }),
+                                    e += "</ul>") : e += '<div class="search-results-none"><i class="fa fa-meh-o"></i></div>', i.html(e)
+                            };
+                        o.on("input", e), o.on("keypress", function (t) {
+                            t.keyCode === Stun.utils.codeToKeyCode("Enter") && e()
+                        })
+                    }
+                })
+        }), $(".search-mask, .search-close").on("click", function () {
+            n()
+        }), $(document).on("keydown", function (t) {
+            t.keyCode === Stun.utils.codeToKeyCode("Escape") && n()
+        });
+        var r = !0, t = "search.json";
+        t ? /json$/i.test(t) && (r = !1) : t = "search.xml";
+        var e = "/" + t;
+
+        function n() {
+            $("body").css("overflow", "auto"), $(".search-popup").removeClass("show").velocity("stop").velocity("transition.expandOut", {duration: 300}), $(".search-mask").velocity("stop").velocity("transition.fadeOut", {duration: 300})
+        }
+    }, !1)
+</script>
+<script src="{% static 'js/pjax.min.js' %}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        new Pjax({
+            selectors: ["head title", "#main", ".pjax-reload", ".header-info"],
+            history: !0,
+            scrollTo: !1,
+            scrollRestoration: !1,
+            cacheBust: !1,
+            debug: !1,
+            currentUrlFullReload: !1,
+            timeout: 0
+        });
+        var a = null;
+        document.addEventListener("pjax:send", function () {
+            $(".header-nav-menu").removeClass("show"),
+            CONFIG.pjax.scrollTo2screen && $("html").velocity("scroll", {
+                duration: 500,
+                offset: $("#header").height(),
+                easing: "easeInOutCubic"
+            });
+            var e = 20;
+            $(".loading-bar").addClass("loading"),
+                $(".loading-bar .progress").css("width", e + "%"),
+                clearInterval(a),
+                a = setInterval(function () {
+                    95 < (e += 3) && (e = 95),
+                        $(".loading-bar .progress").css("width", e + "%")
+                }, 500)
+        }, !1);
+        window.addEventListener("pjax:complete", function () {
+            clearInterval(a),
+                $(".loading-bar .progress").css("width", "100%"),
+                $(".loading-bar").removeClass("loading"),
+                setTimeout(function () {
+                    $(".loading-bar .progress").css("width", "0")
+                }, 400),
+                $("link[rel=prefetch], script[data-pjax-rm]").each(function () {
+                    $(this).remove()
+                }),
+                $("script[data-pjax], #pjax-reload script").each(function () {
+                    $(this).parent().append($(this).remove())
+                }),
+                Stun.utils.pjaxReloadBoot(),
+                Stun.utils.pjaxReloadScroll(),
+                Stun.utils.pjaxReloadHeader(),
+                Stun.utils.pjaxReloadSidebar()
+        }, !1)
+    }, !1)
+</script>
+<div id="pjax-reload">
+    <link href="{% static 'css/katex.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/copy-tex.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/copy-tex.min.js' %}"></script>
+    <script src="{% static 'js/quicklink.umd.js' %}"></script>
+    <script>
+        function initQuicklink() {
+            quicklink({
+                timeout: '10000',
+                priority: 'true',
+                ignores: [uri => uri.includes('#'), uri => uri === 'https://liuyib.github.io/', /\/api\/?/, uri => uri.includes('.xml'), uri => uri.includes('.zip'), (uri, el) => el.hasAttribute('nofollow'), (uri, el) => el.hasAttribute('noprefetch')]
+            });
+        }
+
+        if (true || false) {
+            initQuicklink();
+        } else {
+            window.addEventListener('DOMContentLoaded', initQuicklink, false);
+        }
+    </script>
+    <script src="{% static 'js/bsz.pure.mini.js' %}" async=""></script>
+</div>
+<script src="{% static 'js/gitalk.min.js' %}" data-pjax=""></script>
+<script src="{% static 'js/md5.min.js' %}" data-pjax=""></script>
+<script data-pjax="">
+    function loadGitalk() {
+        document.getElementById("gitalk-container") && new Gitalk({
+            id: md5(window.location.pathname.slice(1)),
+            clientID: "f9773b8f4bf0eab8bdf7",
+            clientSecret: "b8cf368c44428ae4d7c9d0ec634532219e8cdf67",
+            repo: "liuyib.github.io",
+            owner: "liuyib",
+            admin: ["liuyib"],
+            distractionFreeMode: "true",
+            language: "zh-CN"
+        }).render("gitalk-container")
+    }
+
+    loadGitalk()
+</script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script src="{% static 'js/stun-boot.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+<script src="{% static 'js/header.js' %}"></script>
+<script src="{% static 'js/sidebar.js' %}"></script>
+<script>
+    "serviceWorker" in navigator && navigator.serviceWorker.register("/service-worker.js?t=1575602633178").then(function () {
+        console.log("ServiceWorker Register Successfully.")
+    }).catch(function (e) {
+        console.error(e)
+    })
+</script>
+</body>
+</html>

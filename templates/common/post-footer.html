@@ -1,0 +1,69 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<footer class="post-footer">
+    <div class="post-end">
+        <span>------ </span>
+        <span>本文结束，感谢您的阅读</span>
+        <span> ------</span>
+    </div>
+    <div class="post-copyright">
+        <div class="post-copyright-author">
+            <span class="post-copyright-author-name">本文作者: </span>
+            <span class="post-copyright-author-value">
+                <a href="http://yoursite.com">jeremy</a>
+            </span>
+        </div>
+        <div class="post-copyright-link"><span class="post-copyright-link-name">本文链接: </span>
+            <span class="post-copyright-link-value">
+                <a href="{% url 'article:article_detail' article.id %}">
+                    www.jeremyzhang.xyz{% url 'article:article_detail' article.id %}
+                </a>
+            </span>
+        </div>
+        <div class="post-copyright-notice">
+            <span class="post-copyright-notice-name">版权声明: </span>
+            <span class="post-copyright-notice-value">
+                本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn"
+                   rel="external nofollow" target="_blank">BY-NC-SA</a>
+                许可协议。转载请注明出处！
+            </span>
+        </div>
+    </div>
+
+    {# 文章底部的tags #}
+    <div class="post-tags">
+        {% for tags in article.tags.all %}
+            <span class="post-tags-item">
+            <i class="post-tags-item__i fa fa-tags"></i>
+            <a class="post-tags-item__a" href="http://yoursite.com/tags/tag1-tag2/">{{ tags.name }}</a>
+          </span>
+        {% endfor %}
+    </div>
+
+    <nav class="paginator">
+        <div class="paginator-post">
+            {# 上一篇文章 #}
+            {% if article_previous.id %}
+                {# 如果有上一篇才显示 #}
+                <div class="paginator-post-prev">
+                    <a class="paginator-post-prev__a" href="{% url 'article:article_detail' article_previous.id %}">
+                        <i class="fa fa-chevron-left"></i>
+                        <span>{{ article_previous.title }}</span>
+                    </a>
+                </div>
+            {% endif %}
+            {# 下一篇文章 #}
+            {% if article_next.title %}
+                {# 如果有下一篇才显示 #}
+                <div class="paginator-post-next">
+                    <a class="paginator-post-next__a" href="{% url 'article:article_detail' article_next.id %}">
+                        <span>{{ article_next.title }}</span>
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</footer>

@@ -1,0 +1,33 @@
+version: "3"  # 注意版本号
+services:  # 一个应用的容器，可以包括多个相同镜像容器实例
+
+    mysql:
+        image: mysql:5.7
+        container_name: mysql
+        restart: always  # 随docker启动而启动
+        ports:
+            - "3399:3399"
+        environment:
+            MYSQL_DATABASE: myblog
+            MYSQL_ROOT_PASSWORD: Zof7OQi#CxX73lz22k
+            MYSQL_USER: root
+
+    centos:
+        image: centos
+        container_name: centos
+        command: "/bin/bash"
+        tty: true        
+        restart: always        # 随docker启动而启动 
+        ports:
+            - "8000:8000"
+        volumes:
+          - /myblog/MyBlog:/myblog/MyBlog  # 挂载地址
+        
+    nginx:
+        image: nginx
+        container_name: nginx  
+        restart: always        # 随docker启动而启动 
+        ports:
+            - "80:80"
+        volumes:
+          - /myblog/MyBlog:/myblog/MyBlog

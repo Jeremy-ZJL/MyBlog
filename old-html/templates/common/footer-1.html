@@ -1,0 +1,34 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<footer>
+    <div class="box">
+        <div class="endnav">
+            <p>
+                所有文章未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。举报邮箱：
+                <a href="#" target="_blank">
+                    dacesmiling@qq.com
+                </a>
+            </p>
+            <p>
+                Copyright &copy;
+                <a href="../index.html#" target="_blank">www.jeremyzhang.xyz</a>
+                All Rights Reserved. 备案号：
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备19096686号-1</a>
+            </p>
+        </div>
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44140202000181"
+               style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                <img src="{% static 'images/公安备案图标.png' %}" style="float:left;"/>
+                <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+                    粤公网安备 44140202000181号
+                </p>
+            </a>
+        </div>
+    </div>
+    <a href="../index.html#">
+        <div class="top"></div>
+    </a>
+</footer>
+

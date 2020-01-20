@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+{# 网页标题 #}
+{% block title %}
+    <title>首页</title>
+{% endblock title %}
+
+{#在index页面中引用#}
+{% block post-list %}
+    {# 文章列表 #}
+    <section class="post-list">
+        {% for article in articles %}
+            <article class="post">
+                <header class="post-header">
+                    {% if article.topped %}
+                        <div class="sticky-top" data-popover="置顶文章" data-popover-pos="up">
+                            <i class="sticky-top__i fa fa-thumb-tack"></i>
+                        </div>
+                    {% endif %}
+                    <h1 class="post-header-title">
+                        <a class="post-header-title__a"
+                           href="{% url 'article:article_detail' article.id %}">
+                            {{ article.title }}
+                        </a>
+                    </h1>
+                    <div class="post-header-meta">
+                        <span class="post-header-meta-create">
+                            <i class="fa fa-calendar-o"></i>
+                            <span>发表于 </span>
+                            <span>{{ article.created_time }}</span>
+                        </span>
+                        <span class="post-header-meta-update">
+                            <i class="fa fa-calendar-check-o"></i>
+                            <span>更新于 </span>
+                            <span>{{ article.updated_time }}</span>
+                        </span>
+                        {#<span class="post-header-meta-reading-count">#}
+                        {#  <i class="fa fa-eye"></i>#}
+                        {#  <span>阅读次数</span>#}
+                        {#  <span id="busuanzi_value_page_pv"></span>#}
+                        {#</span>#}
+                        <span class="post-tags-item">
+                            <i class="post-tags-item__i fa fa-tags"></i>
+                            {% for tags in article.tags.all %}
+                                <a class="post-tags-item__a" href="">{{ tags.name }}</a>
+                            {% endfor %}
+                        </span>
+                    </div>
+                </header>
+                <div class="post-body">
+                    <div>{{ article.body|truncatechars:50 }}</div>
+                    <div class="post-body-more">
+                        <a class="post-body-more__a" href="{% url 'article:article_detail' article.id %}">阅读全文 »</a>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
+
+{# 左侧栏 #}
+{% block zuo_ce_lan %}
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <section class="sidebar-toc hide"></section>
+            <!-- ov = overview -->
+            <section class="sidebar-ov">
+                <div class="sidebar-ov-author">
+                    <div class="sidebar-ov-author__avatar">
+                        <img class="sidebar-ov-author__avatar_img"
+                             src="{% static 'images/avatar/j-icon-225.png' %}" alt="avatar">
+                    </div>
+                    <p class="sidebar-ov-author__p">hello world</p>
+                </div>
+                <div class="sidebar-ov-social">
+                    <a class="sidebar-ov-social__item" href="https://github.com/"
+                       target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up">
+                        <i class="sidebar-ov-social__item--icon fa fa-github"></i>
+                    </a>
+                    <a class="sidebar-ov-social__item" href="https://juejin.im/"
+                       target="_blank" rel="noopener" data-popover="掘金" data-popover-pos="up">
+                        <span class="sidebar-ov-social__item--logo">掘</span>
+                    </a>
+                </div>
+                <div class="sidebar-ov-state">
+                    <a class="sidebar-ov-state__a posts" href="/archives/">
+                        <div class="sidebar-ov-state__a--count">13</div>
+                        <div class="sidebar-ov-state__a--name">归档</div>
+                    </a>
+                    <a class="sidebar-ov-state__a tags" href="/tags/">
+                        <div class="sidebar-ov-state__a--count">{{ tags.count }}</div>
+                        <div class="sidebar-ov-state__a--name">标签</div>
+                    </a>
+                </div>
+                <div class="sidebar-ov-cc">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn"
+                       target="_blank" rel="noopener" data-popover="知识共享" data-popover-pos="up">
+                        <img src="{% static 'images/cc-by-nc-sa.svg' %}" alt="知识共享">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </aside>
+{% endblock zuo_ce_lan %}
+
+{# 分页 #}
+{% block paginator %}
+    <nav class="paginator">
+        <div class="paginator-inner">
+
+            <!-- 如果不是第一页，则显示上翻按钮 -->
+            {% if articles.has_previous %}
+                <a class="extend prev" rel="prev" href="?page={{ articles.previous_page_number }}">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            {% endif %}
+
+            <!-- 当前页面 -->
+            {% for num in page_range %}
+                {% if num == d_page %}
+                    <span class="page-number current">{{ num }}</span>
+                {% else %}
+                    <a class="page-number" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            <!-- 如果不是最末页，则显示下翻按钮 -->
+            {% if articles.has_next %}
+                <a class="extend next" rel="next" href="?page={{ articles.next_page_number }}">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+{% endblock paginator %}
+
+l

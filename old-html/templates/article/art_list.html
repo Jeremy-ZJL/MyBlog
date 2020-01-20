@@ -1,0 +1,77 @@
+{% load staticfiles %}
+
+
+{#在index页面中引用#}
+{# 文章列表 #}
+<div class="whitebg bloglist">
+
+    <h2 class="htitle">最新博文</h2>
+    {#博文列表#}
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h3 class="blogtitle">x
+                    <a href="{% url 'article:article_detail' article.id %}">{{ article.title }}</a>
+                </h3>
+                <p class="blogtext">
+                    {{ article.body|truncatechars:50 }}
+                </p>
+                <p class="bloginfo">
+                    <i class="avatar"><img src="{% static 'images/tou_xiang.jpg' %}" alt=""/></i>
+                    <span>{{ article.author }}</span>
+                    <span>{{ article.created }}</span>
+                </p>
+                <a href="{% url 'article:article_detail' article.id %}" class="viewmore">阅读更多</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {# 分页 #}
+    <div class="row">
+        <nav aria-label="Page navigation" class="col-sm-12">
+            <ul class="pagination">
+                <!-- 如果不是第一页，则显示上翻按钮 -->
+                {% if articles.has_previous %}
+                    <li>
+                        <a href="?page={{ articles.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="disabled">
+                        <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!-- 当前页面 -->
+                {% for num in page_range %}
+                    {% if num == d_page %}
+                        <li class="active"><a href="?page={{ num }}">{{ num }}</a></li>
+                    {% else %}
+                        <li><a href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                <!-- 如果不是最末页，则显示下翻按钮 -->
+                {% if articles.has_next %}
+                    <li>
+                        <a href="?page={{ articles.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {#<span>...</span>#}
+                {% else %}
+                    <li class="disabled">
+                        <a href="javascript:void(0);" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+

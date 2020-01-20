@@ -1,0 +1,172 @@
+<!-- 载入静态文件 -->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="jeremy, jeremy'blog">
+    <meta name="description" content="">
+
+    {# 网页标题 #}
+    {% block title %}
+        <title>首页</title>
+    {% endblock title %}
+
+    <meta name="google-site-verification" content="">
+    <meta name="msvalidate.01" content="">
+    <meta name="baidu-site-verification" content="">
+    <meta name="360-site-verification" content="">
+    <meta name="theme-color" content="#54bcff">
+
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="icon" href="{% static 'images/icons/j-icon-16.png' %}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{% static 'images/icons/j-icon-32.png' %}" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'markdown_css/default.css' %}">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <script>
+        var Stun = window.Stun || {},
+            CONFIG = {
+                root: "/",
+                algolia: void 0,
+                fontawesome: {
+                    prefix: "fa"
+                },
+                sidebar: {
+                    offsetTop: "30px",
+                    tocMaxDepth: 4
+                },
+                header: {
+                    scrollDownIcon: !0
+                },
+                post_widget: {
+                    end_text: !0
+                },
+                night_mode: {
+                    enable: !0
+                },
+                back2top: {
+                    enable: !0
+                },
+                codeblock: {
+                    style: "carbon",
+                    highlight: "light",
+                    word_wrap: !1
+                },
+                reward: !0,
+                fancybox: !1,
+                zoom_image: {
+                    enable: !0,
+                    mask_color: "rgba(0,0,0,0.6)"
+                },
+                gallery_waterfall: {
+                    enable: !0,
+                    col_width: "220px",
+                    gap_x: "10px",
+                    gap_y: "10px"
+                },
+                lazyload: {
+                    enable: !0,
+                    placeholder: "gif"
+                },
+                pjax: {
+                    scrollTo2screen: !0
+                },
+                external_link: {
+                    icon: {
+                        enable: !0,
+                        name: "external-link"
+                    }
+                },
+                shortcuts: {
+                    switch_post: !0
+                },
+                prompt: {
+                    copy_success: "复制成功",
+                    copy_error: "复制失败",
+                    creative_commons: "知识共享",
+                    copy_button: "复制代码"
+                }
+            };
+        window.CONFIG = CONFIG
+    </script>
+</head>
+
+<body>
+<div class="container" id="container">
+
+    {# 头部 #}
+    {% include 'common/header.html' %}
+
+    <main class="main" id="main">
+
+        <div class="main-inner">
+            <div class="content-wrap" id="content-wrap">
+                {# 文章区域 #}
+                {% block content %}
+                    <div class="content content-home">
+                        {# 文章列表 #}
+                        {% block post-list %} {% endblock post-list %}
+
+                        {# 分页 #}
+                        {% block paginator %} {% endblock paginator %}
+
+                    </div>
+                {% endblock content %}
+            </div>
+            {# 左侧栏 #}
+            {% block zuo_ce_lan %} {% endblock zuo_ce_lan %}
+            <div class="clearfix"></div>
+        </div>
+
+    </main>
+
+    {# 脚部 #}
+    {% include 'common/footer.html' %}
+
+    <div class="loading-bar" id="loading-bar">
+        <div class="progress"></div>
+    </div>
+    <div class="back2top" id="back2top"><i class="back2top-icon fa fa-rocket"></i></div>
+</div>
+<div class="search-mask"></div>
+<div class="search-popup">
+    <span class="search-close"></span>
+    <div class="search-input">
+        <label>
+            <input placeholder="搜索文章（支持多关键词，请用空格分隔）">
+        </label>
+    </div>
+    <div class="search-results"></div>
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/velocity.min.js' %}"></script>
+<script src="{% static 'js/velocity.ui.min.js' %}"></script>
+<script src="{% static 'js/ribbon.min.js' %}" size="120" alpha="0.6" zIndex="-1"></script>
+<script src="{% static 'js/canvas-nest.min.js' %}" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/lazyload.min.js' %}"></script>
+<script src="{% static 'js/base_search.js' %}"></script>
+<script src="{% static 'js/pjax.min.js' %}"></script>
+<script src="{% static 'js/base_pjax.js' %}"></script>
+<div id="pjax-reload">
+    <script async src="{% static 'js/bsz.pure.mini.js' %}"></script>
+</div>
+<script src="{% static 'js/utils.js' %}"></script>
+<script src="{% static 'js/stun-boot.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+<script src="{% static 'js/header.js' %}"></script>
+<script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+
+</html>
