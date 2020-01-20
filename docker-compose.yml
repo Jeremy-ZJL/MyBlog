@@ -8,7 +8,7 @@ services:  # 一个应用的容器，可以包括多个相同镜像容器实例
         ports:
             - "3399:3399"
         environment:
-            MYSQL_DATABASE: myblog
+            # MYSQL_DATABASE: myblog
             MYSQL_ROOT_PASSWORD: Zof7OQi#CxX73lz22k
             MYSQL_USER: root
 
