@@ -21,7 +21,7 @@ services:  # 一个应用的容器，可以包括多个相同镜像容器实例
         ports:
             - "8000:8000"
         volumes:
-          - /myblog/MyBlog:/myblog/MyBlog  # 挂载地址
+          - /MyBlog:/myblog  # 挂载地址
         
     nginx:
         image: nginx
@@ -30,4 +30,4 @@ services:  # 一个应用的容器，可以包括多个相同镜像容器实例
         ports:
             - "80:80"
         volumes:
-          - /myblog/MyBlog:/myblog/MyBlog
+          - /MyBlog:/myblog
