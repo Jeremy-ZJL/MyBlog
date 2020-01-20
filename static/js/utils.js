@@ -48,23 +48,21 @@ Stun.utils = Stun.$u = {
             }
             return t
         }
-
         return function t(n) {
             function o(t, i, a) {
                 var r;
                 if ("undefined" != typeof document) {
                     if (arguments.length > 1) {
                         if ("number" == typeof (a = e({
-                            path: "/"
-                        }, o.defaults, a)).expires) {
+                                path: "/"
+                            }, o.defaults, a)).expires) {
                             var c = new Date;
                             c.setMilliseconds(c.getMilliseconds() + 864e5 * a.expires), a.expires = c
                         }
                         a.expires = a.expires ? a.expires.toUTCString() : "";
                         try {
                             r = JSON.stringify(i), /^[{[]/.test(r) && (i = r)
-                        } catch (e) {
-                        }
+                        } catch (e) {}
                         i = n.write ? n.write(i, t) : encodeURIComponent(String(i)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent), t = (t = (t = encodeURIComponent(String(t))).replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)).replace(/[()]/g, escape);
                         var s = "";
                         for (var l in a) a[l] && (s += "; " + l, !0 !== a[l] && (s += "=" + a[l]));
@@ -79,20 +77,17 @@ Stun.utils = Stun.$u = {
                             var h = f[0].replace(u, decodeURIComponent);
                             if (m = n.read ? n.read(m, h) : n(m, h) || m.replace(u, decodeURIComponent), this.json) try {
                                 m = JSON.parse(m)
-                            } catch (e) {
-                            }
+                            } catch (e) {}
                             if (t === h) {
                                 r = m;
                                 break
                             }
                             t || (r[h] = m)
-                        } catch (e) {
-                        }
+                        } catch (e) {}
                     }
                     return r
                 }
             }
-
             return o.set = o, o.get = function (e) {
                 return o.call(o, e)
             }, o.getJSON = function () {
@@ -104,27 +99,23 @@ Stun.utils = Stun.$u = {
                     expires: -1
                 }))
             }, o.withConverter = t, o
-        }(function () {
-        })
+        }(function () {})
     },
-
+    showThemeInConsole: function () {
+        console.log("1-1")
+    },
     codeToKeyCode: function (e) {
         return {
             ArrowLeft: 37,
             ArrowRight: 39,
             Escape: 27,
             Enter: 13
-        }[e]
+        } [e]
     },
     popAlert: function (e, t, n) {
         0 !== $(".stun-message").length && $(".stun-message").remove();
         var o = CONFIG.fontawesome && CONFIG.fontawesome.prefix || "fa",
-            i = $('<div class="stun-message">' + `<div class="stun-alert stun-alert-${e}">` + `<i class="stun-alert-icon ${o} fa-${{
-                success: "check-circle",
-                info: "exclamation-circle",
-                warning: "exclamation-circle",
-                error: "times-circle"
-            }[e]}"></i>` + `<span class="stun-alert-description">${t}</span>` + "</div></div>");
+            i = $('<div class="stun-message">' + `<div class="stun-alert stun-alert-${e}">` + `<i class="stun-alert-icon ${o} fa-${{success:"check-circle",info:"exclamation-circle",warning:"exclamation-circle",error:"times-circle"}[e]}"></i>` + `<span class="stun-alert-description">${t}</span>` + "</div></div>");
         $("body").append(i), $(document).ready(function () {
             $(".stun-alert").velocity("stop").velocity("transition.slideDownBigIn", {
                 duration: 300
@@ -162,8 +153,7 @@ Stun.utils = Stun.$u = {
                     if (e.attr(o[a])) {
                         i = e.attr(o[a]);
                         break
-                    }
-                n = e.wrap(`\n          <a class="fancybox" href="${i}" itemscope\n            itemtype="http://schema.org/ImageObject" itemprop="url"></a>\n        `).parent("a"), e.is(".gallery img") ? n.attr("data-fancybox", "gallery") : n.attr("data-fancybox", "default")
+                    } n = e.wrap(`\n          <a class="fancybox" href="${i}" itemscope\n            itemtype="http://schema.org/ImageObject" itemprop="url"></a>\n        `).parent("a"), e.is(".gallery img") ? n.attr("data-fancybox", "gallery") : n.attr("data-fancybox", "default")
             }
             t && n.attr("title", t).attr("data-caption", t)
         }), $().fancybox({
@@ -237,7 +227,6 @@ Stun.utils = Stun.$u = {
                 }
             })
         }
-
         $(window).on("scroll", function () {
             n && (n = !1, setTimeout(o, 200))
         }), $(document).on("click", function () {
@@ -279,9 +268,7 @@ Stun.utils = Stun.$u = {
                 var t = "";
                 if (e) "carbon" === e && (t += '\n            <div class="custom-carbon">\n              <div class="custom-carbon-dot custom-carbon-dot--red"></div>\n              <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>\n              <div class="custom-carbon-dot custom-carbon-dot--green"></div>\n            </div>\n          ');
                 else {
-                    t += `<div class="custom-lang">${$(this).attr("class").split(/\s/).filter(function (e) {
-                        return "highlight" !== e
-                    })}</div>`
+                    t += `<div class="custom-lang">${$(this).attr("class").split(/\s/).filter(function(e){return"highlight"!==e})}</div>`
                 }
                 $(`<figcaption class="custom">${t}</figcaption>`).insertBefore($(this).children().first())
             }

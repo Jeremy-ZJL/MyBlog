@@ -11,11 +11,11 @@
 {# 文章区域 #}
 {% block content %}
     <div class="content">
-        <div class="post">
+        <div class="post" id="is-post">
             {# 文章头部 #}
             {% include 'common/post-header.html' %}
 
-            <div class="highlight">
+            <div class="post-body highlight">
                 <p>{{ article.body | safe }}</p>
             </div>
 
@@ -38,7 +38,7 @@
             <section class="sidebar-toc">
                 <div>
                     <P>{{ article.toc|safe }}</P>
-{#                    <a href="javascript:void(0);" class="backtop">返回顶部</a>#}
+                    {#<a href="javascript:void(0);" class="backtop">返回顶部</a>#}
                 </div>
             </section>
             <!-- ov = overview -->
@@ -48,7 +48,7 @@
                         <img class="sidebar-ov-author__avatar_img"
                              src="{% static 'images/avatar/j-icon-225.png' %}" alt="avatar">
                     </div>
-                    <p class="sidebar-ov-author__p">hello world</p>
+                    <p class="sidebar-ov-author__p">write code and love life</p>
                 </div>
                 <div class="sidebar-ov-social">
                     <a class="sidebar-ov-social__item" href="https://github.com/"
@@ -79,9 +79,8 @@
                 </div>
             </section>
             <div class="sidebar-reading">
-                <div class="sidebar-reading-info">
-                    <span>你已阅读了 </span>
-                    <span class="sidebar-reading-info-num"></span>
+                <div class="sidebar-reading-info"><span>你已阅读了 </span>
+                    <span class="sidebar-reading-info-num">0</span>
                 </div>
                 <div class="sidebar-reading-line"></div>
             </div>
