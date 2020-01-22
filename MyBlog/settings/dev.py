@@ -153,7 +153,7 @@ LOGGING = {
             'formatter': 'simple'
         },
         'file': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             # 日志位置,日志文件名,日志保存目录必须手动创建
             'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/myblog.log"),
