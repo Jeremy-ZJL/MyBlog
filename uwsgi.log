@@ -1,0 +1,537 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jan 20 07:09:16 2020] ***
+compiled with version: 8.3.1 20190507 (Red Hat 8.3.1-4) on 20 January 2020 04:13:01
+os: Linux-3.10.0-1062.4.1.el7.x86_64 #1 SMP Fri Oct 18 17:15:30 UTC 2019
+nodename: f40d5b19754c
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /myblog
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /myblog
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+Python main interpreter initialized at 0x151d7a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 500800 bytes (489 KB) for 18 cores
+*** Operational MODE: preforking+threaded ***
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/logging/config.py", line 565, in configure
+    handler = self.configure_handler(handlers[name])
+  File "/usr/lib64/python3.6/logging/config.py", line 738, in configure_handler
+    result = factory(**kwargs)
+  File "/usr/lib64/python3.6/logging/handlers.py", line 150, in __init__
+    BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/lib64/python3.6/logging/handlers.py", line 57, in __init__
+    logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+  File "/usr/lib64/python3.6/logging/__init__.py", line 1032, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/lib64/python3.6/logging/__init__.py", line 1061, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/myblog/logs/myblog.log'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "MyBlog/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.6/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.6/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/log.py", line 76, in configure_logging
+    logging_config_func(logging_settings)
+  File "/usr/lib64/python3.6/logging/config.py", line 802, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/lib64/python3.6/logging/config.py", line 573, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'file': [Errno 2] No such file or directory: '/myblog/logs/myblog.log'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1521)
+spawned uWSGI worker 1 (pid: 1523, cores: 6)
+spawned uWSGI worker 2 (pid: 1524, cores: 6)
+spawned uWSGI worker 3 (pid: 1525, cores: 6)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jan 20 07:10:41 2020] ***
+compiled with version: 8.3.1 20190507 (Red Hat 8.3.1-4) on 20 January 2020 04:13:01
+os: Linux-3.10.0-1062.4.1.el7.x86_64 #1 SMP Fri Oct 18 17:15:30 UTC 2019
+nodename: f40d5b19754c
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /myblog
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /myblog
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+Python main interpreter initialized at 0x18777a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 500800 bytes (489 KB) for 18 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x18777a0 pid: 1551 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1551)
+spawned uWSGI worker 1 (pid: 1553, cores: 6)
+spawned uWSGI worker 2 (pid: 1554, cores: 6)
+spawned uWSGI worker 3 (pid: 1555, cores: 6)
+[pid: 1555|app: 0|req: 1/1] 117.136.79.52 () {44 vars in 853 bytes} [Mon Jan 20 15:10:50 2020] GET / => generated 32293 bytes in 459 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 2/2] 117.136.79.52 () {48 vars in 865 bytes} [Mon Jan 20 15:11:02 2020] GET /article-detail/15/ => generated 26052 bytes in 193 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 3/3] 117.136.79.52 () {46 vars in 911 bytes} [Mon Jan 20 15:11:17 2020] GET /article-detail/15/ => generated 26052 bytes in 96 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 4/4] 117.136.79.52 () {52 vars in 900 bytes} [Mon Jan 20 15:11:22 2020] GET / => generated 32293 bytes in 101 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 5/5] 117.136.79.52 () {52 vars in 918 bytes} [Mon Jan 20 15:11:25 2020] GET /article-detail/10/ => generated 16403 bytes in 60 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1555|app: 0|req: 6/6] 117.136.79.52 () {52 vars in 900 bytes} [Mon Jan 20 15:11:50 2020] GET / => generated 32293 bytes in 94 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1555|app: 0|req: 7/7] 117.136.79.52 () {52 vars in 918 bytes} [Mon Jan 20 15:11:54 2020] GET /article-detail/13/ => generated 23955 bytes in 424 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 8/8] 183.62.15.118 () {42 vars in 828 bytes} [Mon Jan 20 15:23:15 2020] GET / => generated 32293 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 9/9] 183.62.15.118 () {48 vars in 871 bytes} [Mon Jan 20 15:23:26 2020] GET /article-detail/10/ => generated 16403 bytes in 81 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 10/10] 183.62.15.118 () {48 vars in 835 bytes} [Mon Jan 20 15:23:30 2020] GET / => generated 32293 bytes in 96 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 11/11] 183.62.15.118 () {48 vars in 871 bytes} [Mon Jan 20 15:23:32 2020] GET /article-detail/15/ => generated 26052 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1555|app: 0|req: 12/12] 183.62.15.118 () {42 vars in 828 bytes} [Mon Jan 20 15:26:13 2020] GET / => generated 32293 bytes in 84 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1555|app: 0|req: 13/13] 183.62.15.118 () {48 vars in 871 bytes} [Mon Jan 20 15:26:15 2020] GET /article-detail/15/ => generated 26052 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 14/14] 183.62.15.118 () {44 vars in 895 bytes} [Mon Jan 20 15:26:18 2020] GET /article-detail/15/ => generated 26052 bytes in 86 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 15/15] 183.62.15.118 () {48 vars in 853 bytes} [Mon Jan 20 15:26:29 2020] GET / => generated 32293 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 16/16] 183.62.15.118 () {48 vars in 871 bytes} [Mon Jan 20 15:26:31 2020] GET /article-detail/12/ => generated 27110 bytes in 86 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 17/17] 183.62.15.118 () {48 vars in 853 bytes} [Mon Jan 20 15:26:33 2020] GET / => generated 32293 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1555|app: 0|req: 18/18] 183.62.15.118 () {48 vars in 869 bytes} [Mon Jan 20 15:26:35 2020] GET /article-detail/1/ => generated 16397 bytes in 59 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1555|app: 0|req: 19/19] 183.62.15.118 () {44 vars in 893 bytes} [Mon Jan 20 15:26:36 2020] GET /article-detail/1/ => generated 16397 bytes in 60 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 20/20] 183.62.15.118 () {48 vars in 886 bytes} [Mon Jan 20 15:26:40 2020] GET /article-detail/2/ => generated 17306 bytes in 58 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 21/21] 183.62.15.118 () {44 vars in 893 bytes} [Mon Jan 20 15:26:43 2020] GET /article-detail/2/ => generated 17306 bytes in 57 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 22/22] 183.62.15.118 () {44 vars in 893 bytes} [Mon Jan 20 15:26:53 2020] GET /article-detail/2/ => generated 17306 bytes in 59 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 23/23] 183.62.15.118 () {46 vars in 915 bytes} [Mon Jan 20 15:26:58 2020] GET /article-detail/2/ => generated 17306 bytes in 60 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+-- unavailable modifier requested: 3 --
+-- unavailable modifier requested: 3 --
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+-- unavailable modifier requested: 3 --
+[pid: 1555|app: 0|req: 24/28] 117.136.79.52 () {42 vars in 822 bytes} [Mon Jan 20 16:43:46 2020] GET / => generated 32293 bytes in 91 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1555|app: 0|req: 25/29] 117.136.79.52 () {46 vars in 875 bytes} [Mon Jan 20 16:44:05 2020] GET / => generated 32293 bytes in 91 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 26/30] 117.136.79.52 () {52 vars in 918 bytes} [Mon Jan 20 16:44:09 2020] GET /article-detail/15/ => generated 26052 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 27/31] 117.136.79.52 () {46 vars in 911 bytes} [Mon Jan 20 16:44:14 2020] GET /article-detail/15/ => generated 26052 bytes in 86 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 28/32] 117.136.79.52 () {52 vars in 900 bytes} [Mon Jan 20 16:44:25 2020] GET / => generated 32293 bytes in 103 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 29/33] 117.136.79.52 () {52 vars in 916 bytes} [Mon Jan 20 16:44:26 2020] GET /article-detail/1/ => generated 16397 bytes in 60 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1555|app: 0|req: 30/34] 117.136.79.52 () {52 vars in 899 bytes} [Mon Jan 20 16:44:29 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1555|app: 0|req: 31/35] 117.136.79.52 () {44 vars in 853 bytes} [Mon Jan 20 16:44:49 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 32/36] 117.136.79.52 () {48 vars in 829 bytes} [Mon Jan 20 16:44:52 2020] GET / => generated 32293 bytes in 89 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 33/37] 117.136.79.52 () {48 vars in 865 bytes} [Mon Jan 20 16:44:55 2020] GET /article-detail/15/ => generated 26052 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 34/38] 117.136.79.52 () {44 vars in 889 bytes} [Mon Jan 20 16:44:57 2020] GET /article-detail/15/ => generated 26052 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 35/39] 117.136.79.52 () {48 vars in 865 bytes} [Mon Jan 20 16:45:03 2020] GET /archives/ => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 5)
+[pid: 1553|app: 0|req: 1/40] 117.136.79.52 () {48 vars in 847 bytes} [Mon Jan 20 16:45:05 2020] GET / => generated 32293 bytes in 450 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 36/41] 117.136.79.52 () {48 vars in 865 bytes} [Mon Jan 20 16:45:08 2020] GET /article-detail/12/ => generated 27110 bytes in 70 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1555|app: 0|req: 37/42] 117.136.79.52 () {44 vars in 889 bytes} [Mon Jan 20 16:45:17 2020] GET /article-detail/12/ => generated 27110 bytes in 74 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1555|app: 0|req: 38/43] 117.136.79.52 () {48 vars in 847 bytes} [Mon Jan 20 16:45:34 2020] GET / => generated 32293 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 39/44] 47.98.103.48 () {34 vars in 464 bytes} [Mon Jan 20 16:51:34 2020] GET / => generated 32293 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 1555|app: 0|req: 40/45] 113.96.219.248 () {42 vars in 755 bytes} [Mon Jan 20 21:08:23 2020] GET / => generated 32293 bytes in 89 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1555|app: 0|req: 41/46] 121.51.14.26 () {42 vars in 724 bytes} [Mon Jan 20 21:08:23 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1555|app: 0|req: 42/47] 157.255.172.24 () {42 vars in 726 bytes} [Mon Jan 20 21:08:24 2020] GET / => generated 32293 bytes in 96 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1555|app: 0|req: 43/48] 223.74.133.216 () {38 vars in 542 bytes} [Mon Jan 20 21:08:37 2020] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 1554|app: 0|req: 1/49] 223.74.133.216 () {46 vars in 835 bytes} [Mon Jan 20 21:08:57 2020] GET /article-detail/15/ => generated 26052 bytes in 640 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Jan 20 14:38:31 2020] ***
+compiled with version: 8.3.1 20190507 (Red Hat 8.3.1-4) on 20 January 2020 04:13:01
+os: Linux-3.10.0-1062.4.1.el7.x86_64 #1 SMP Fri Oct 18 17:15:30 UTC 2019
+nodename: f40d5b19754c
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /myblog
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /myblog
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+Python main interpreter initialized at 0x204c7a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 500800 bytes (489 KB) for 18 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x204c7a0 pid: 1617 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1617)
+spawned uWSGI worker 1 (pid: 1619, cores: 6)
+spawned uWSGI worker 2 (pid: 1620, cores: 6)
+spawned uWSGI worker 3 (pid: 1621, cores: 6)
+[pid: 1621|app: 0|req: 1/1] 183.62.15.118 () {36 vars in 563 bytes} [Mon Jan 20 22:38:49 2020] GET /favicon.ico => generated 77 bytes in 247 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 1621|app: 0|req: 2/2] 183.62.15.118 () {42 vars in 722 bytes} [Mon Jan 20 22:38:49 2020] GET / => generated 32293 bytes in 207 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1621|app: 0|req: 3/3] 42.236.10.75 () {44 vars in 924 bytes} [Mon Jan 20 22:38:53 2020] GET / => generated 32293 bytes in 97 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1621|app: 0|req: 4/4] 183.62.15.118 () {48 vars in 771 bytes} [Mon Jan 20 22:38:53 2020] GET /article-detail/15/ => generated 26088 bytes in 186 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1621|app: 0|req: 5/5] 216.145.17.190 () {38 vars in 541 bytes} [Mon Jan 20 22:45:09 2020] GET /robots.txt => generated 77 bytes in 2 msecs (HTTP/1.0 404) 3 headers in 100 bytes (1 switches on core 4)
+[pid: 1620|app: 0|req: 1/6] 216.145.17.190 () {48 vars in 694 bytes} [Mon Jan 20 22:45:12 2020] GET / => generated 32293 bytes in 442 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 21573 (max 4096)...skip
+[pid: 1621|app: 0|req: 6/8] 47.92.120.136 () {34 vars in 445 bytes} [Tue Jan 21 03:57:47 2020] GET / => generated 32293 bytes in 89 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1621|app: 0|req: 7/9] 93.158.161.2 () {36 vars in 499 bytes} [Tue Jan 21 04:23:25 2020] GET /robots.txt => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 1620|app: 0|req: 2/10] 93.158.161.2 () {38 vars in 549 bytes} [Tue Jan 21 04:23:29 2020] GET /article-detail/2/ => generated 17342 bytes in 122 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 20047 (max 4096)...skip
+[pid: 1621|app: 0|req: 8/11] 219.132.138.58 () {36 vars in 563 bytes} [Tue Jan 21 11:21:42 2020] GET /favicon.ico => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 1619|app: 0|req: 1/12] 219.132.138.58 () {40 vars in 676 bytes} [Tue Jan 21 11:21:42 2020] GET / => generated 32293 bytes in 444 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1621|app: 0|req: 9/13] 219.132.138.58 () {46 vars in 758 bytes} [Tue Jan 21 11:22:56 2020] GET /article-detail/15/ => generated 26088 bytes in 91 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1621|app: 0|req: 10/14] 219.132.138.58 () {48 vars in 767 bytes} [Tue Jan 21 11:23:18 2020] GET / => generated 32293 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1621|app: 0|req: 11/15] 219.132.138.58 () {44 vars in 734 bytes} [Tue Jan 21 11:23:23 2020] GET / => generated 32293 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1621|app: 0|req: 12/16] 219.132.138.58 () {44 vars in 734 bytes} [Tue Jan 21 11:23:49 2020] GET / => generated 32293 bytes in 93 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1621|app: 0|req: 13/17] 219.132.138.58 () {44 vars in 734 bytes} [Tue Jan 21 11:23:57 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1620|app: 0|req: 3/18] 219.132.138.58 () {44 vars in 733 bytes} [Tue Jan 21 11:24:14 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 5 --
+-- unavailable modifier requested: 4 --
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+-- unavailable modifier requested: 128 --
+invalid request block size: 19525 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+Empty python request. skip.
+[pid: 1621|app: -1|req: -1/25]  () {0 vars in 0 bytes} [Tue Jan 21 12:13:31 2020]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 2)
+Empty python request. skip.
+[pid: 1620|app: -1|req: -1/26]  () {0 vars in 0 bytes} [Tue Jan 21 12:13:32 2020]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 2)
+invalid request block size: 25956 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 19790 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 25709 (max 4096)...skip
+-- unavailable modifier requested: 58 --
+invalid request block size: 19794 (max 4096)...skip
+-- unavailable modifier requested: 1 --
+invalid uwsgi request (current strsize: 0). skip.
+[pid: 1621|app: -1|req: -1/30]  () {0 vars in 1 bytes} [Tue Jan 21 12:13:49 2020]   => generated 0 bytes in 0 msecs ( 500) 0 headers in 0 bytes (0 switches on core 1)
+uwsgi key cannot be null. skip this var.
+[pid: 1620|app: -1|req: -1/31]  () {0 vars in 3 bytes} [Tue Jan 21 12:13:50 2020]   => generated 0 bytes in 0 msecs ( 500) 0 headers in 0 bytes (0 switches on core 2)
+invalid request block size: 20297 (max 4096)...skip
+invalid request block size: 21327 (max 4096)...skip
+invalid request block size: 16709 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+-- unavailable modifier requested: 128 --
+[pid: 1621|app: 0|req: 14/44] 219.132.138.58 () {42 vars in 703 bytes} [Tue Jan 21 15:02:05 2020] GET / => generated 32293 bytes in 89 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1621|app: 0|req: 15/45] 219.132.138.58 () {48 vars in 784 bytes} [Tue Jan 21 15:02:18 2020] GET /article-detail/15/ => generated 26088 bytes in 83 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1619|app: 0|req: 2/46] 219.132.138.58 () {48 vars in 748 bytes} [Tue Jan 21 15:02:24 2020] GET / => generated 32293 bytes in 101 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 5 --
+-- unavailable modifier requested: 4 --
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+-- unavailable modifier requested: 128 --
+invalid request block size: 19525 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+Empty python request. skip.
+[pid: 1620|app: -1|req: -1/52]  () {0 vars in 0 bytes} [Tue Jan 21 15:03:30 2020]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 0)
+Empty python request. skip.
+[pid: 1621|app: -1|req: -1/53]  () {0 vars in 0 bytes} [Tue Jan 21 15:03:31 2020]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 3)
+invalid request block size: 25956 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 19790 (max 4096)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 25709 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 21327 (max 4096)...skip
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 22 --
+invalid request block size: 16709 (max 4096)...skip
+-- unavailable modifier requested: 128 --
+uwsgi_proto_uwsgi_parser(): Resource temporarily unavailable [proto/uwsgi.c line 40]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 1621|app: 0|req: 16/70] 219.132.138.58 () {42 vars in 703 bytes} [Tue Jan 21 16:15:54 2020] GET / => generated 32293 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1621|app: 0|req: 17/71] 219.132.138.58 () {48 vars in 749 bytes} [Tue Jan 21 16:16:06 2020] GET / => generated 32293 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1619|app: 0|req: 3/72] 219.132.138.58 () {48 vars in 783 bytes} [Tue Jan 21 16:16:09 2020] GET /article-detail/1/ => generated 16433 bytes in 117 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Jan 21 08:37:51 2020] ***
+compiled with version: 8.3.1 20190507 (Red Hat 8.3.1-4) on 20 January 2020 04:13:01
+os: Linux-3.10.0-1062.4.1.el7.x86_64 #1 SMP Fri Oct 18 17:15:30 UTC 2019
+nodename: f40d5b19754c
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /myblog
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /myblog
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+Python main interpreter initialized at 0x15af800
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 599104 bytes (585 KB) for 18 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x15af800 pid: 1665 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1665)
+spawned uWSGI worker 1 (pid: 1667, cores: 6)
+spawned uWSGI worker 2 (pid: 1668, cores: 6)
+spawned uWSGI worker 3 (pid: 1669, cores: 6)
+[pid: 1667|app: 0|req: 1/1] 219.132.138.58 () {42 vars in 703 bytes} [Tue Jan 21 16:38:20 2020] GET / => generated 32293 bytes in 453 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1667|app: 0|req: 2/2] 219.132.138.58 () {48 vars in 784 bytes} [Tue Jan 21 16:38:29 2020] GET /article-detail/15/ => generated 26088 bytes in 185 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+[pid: 1667|app: 0|req: 3/3] 219.132.138.58 () {48 vars in 803 bytes} [Tue Jan 21 16:38:38 2020] GET /article-detail/13/ => generated 23991 bytes in 433 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 1667|app: 0|req: 4/4] 219.132.138.58 () {46 vars in 792 bytes} [Tue Jan 21 16:39:08 2020] GET /article-detail/13/ => generated 23991 bytes in 81 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 1667|app: 0|req: 5/5] 180.163.220.67 () {38 vars in 874 bytes} [Tue Jan 21 16:39:14 2020] GET /article-detail/13 => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 124 bytes (1 switches on core 4)
+[pid: 1668|app: 0|req: 1/6] 180.163.220.67 () {44 vars in 959 bytes} [Tue Jan 21 16:39:17 2020] GET /article-detail/13 => generated 0 bytes in 222 msecs (HTTP/1.1 301) 3 headers in 124 bytes (1 switches on core 0)
+[pid: 1667|app: 0|req: 6/7] 180.163.220.67 () {44 vars in 962 bytes} [Tue Jan 21 16:39:20 2020] GET /article-detail/13/ => generated 23991 bytes in 78 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 4)
+[pid: 1668|app: 0|req: 2/8] 219.132.138.58 () {48 vars in 767 bytes} [Tue Jan 21 16:40:08 2020] GET / => generated 32293 bytes in 219 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Jan 21 08:43:29 2020] ***
+compiled with version: 8.3.1 20190507 (Red Hat 8.3.1-4) on 20 January 2020 04:13:01
+os: Linux-3.10.0-1062.4.1.el7.x86_64 #1 SMP Fri Oct 18 17:15:30 UTC 2019
+nodename: f40d5b19754c
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /myblog
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /myblog
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+Python main interpreter initialized at 0x818820
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 599104 bytes (585 KB) for 18 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x818820 pid: 1716 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1716)
+spawned uWSGI worker 1 (pid: 1718, cores: 6)
+spawned uWSGI worker 2 (pid: 1719, cores: 6)
+spawned uWSGI worker 3 (pid: 1720, cores: 6)
+[pid: 1719|app: 0|req: 1/1] 219.132.138.58 () {44 vars in 734 bytes} [Tue Jan 21 16:43:39 2020] GET / => generated 32293 bytes in 466 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 2/2] 219.132.138.58 () {42 vars in 711 bytes} [Tue Jan 21 16:44:26 2020] GET /xadm => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 1718|app: 0|req: 1/3] 219.132.138.58 () {42 vars in 690 bytes} [Tue Jan 21 16:44:26 2020] GET /favicon.ico => generated 77 bytes in 249 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 3/4] 219.132.138.58 () {42 vars in 715 bytes} [Tue Jan 21 16:44:32 2020] GET /xadmin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 113 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 1/5] 219.132.138.58 () {42 vars in 717 bytes} [Tue Jan 21 16:44:33 2020] GET /xadmin/ => generated 4386 bytes in 406 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 4/6] 219.132.138.58 () {42 vars in 740 bytes} [Tue Jan 21 16:44:33 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 62 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 5/7] 42.236.10.93 () {44 vars in 932 bytes} [Tue Jan 21 16:44:35 2020] GET /xadm => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 4)
+[pid: 1718|app: 0|req: 2/8] 180.163.220.66 () {38 vars in 852 bytes} [Tue Jan 21 16:44:37 2020] GET /xadmin => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 113 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 2/9] 219.132.138.58 () {52 vars in 1032 bytes} [Tue Jan 21 16:44:40 2020] POST /xadmin/ => generated 0 bytes in 198 msecs (HTTP/1.1 302) 9 headers in 560 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 3/10] 180.163.220.67 () {38 vars in 852 bytes} [Tue Jan 21 16:44:41 2020] GET /xadmin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 113 bytes (1 switches on core 2)
+[pid: 1720|app: 0|req: 4/11] 180.163.220.66 () {44 vars in 938 bytes} [Tue Jan 21 16:44:41 2020] GET /xadmin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 113 bytes (1 switches on core 2)
+[pid: 1720|app: 0|req: 5/12] 180.163.220.66 () {44 vars in 940 bytes} [Tue Jan 21 16:44:41 2020] GET /xadmin/ => generated 4386 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 2)
+[pid: 1718|app: 0|req: 3/13] 180.163.220.67 () {38 vars in 854 bytes} [Tue Jan 21 16:44:41 2020] GET /xadmin/ => generated 4386 bytes in 167 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 6/14] 180.163.220.67 () {44 vars in 943 bytes} [Tue Jan 21 16:44:41 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 6/15] 219.132.138.58 () {46 vars in 918 bytes} [Tue Jan 21 16:44:40 2020] GET /xadmin/ => generated 15260 bytes in 3180 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 7/16] 219.132.138.58 () {42 vars in 784 bytes} [Tue Jan 21 16:44:44 2020] GET /xadmin/jsi18n/ => generated 7722 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 8/17] 42.236.10.114 () {44 vars in 933 bytes} [Tue Jan 21 16:44:46 2020] GET /xadm => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 1720|app: 0|req: 7/18] 219.132.138.58 () {44 vars in 913 bytes} [Tue Jan 21 16:44:47 2020] GET /xadmin/article/tags/ => generated 28976 bytes in 1210 msecs (HTTP/1.1 200) 8 headers in 541 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 9/19] 219.132.138.58 () {42 vars in 797 bytes} [Tue Jan 21 16:44:48 2020] GET /xadmin/jsi18n/ => generated 7722 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 2)
+[pid: 1719|app: 0|req: 10/20] 219.132.138.58 () {44 vars in 933 bytes} [Tue Jan 21 16:44:51 2020] GET /xadmin/article/tags/add/ => generated 17074 bytes in 200 msecs (HTTP/1.1 200) 7 headers in 396 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 11/21] 219.132.138.58 () {42 vars in 801 bytes} [Tue Jan 21 16:44:52 2020] GET /xadmin/jsi18n/ => generated 7722 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 12/22] 42.236.10.114 () {44 vars in 963 bytes} [Tue Jan 21 16:44:58 2020] GET /xadmin/article/tags => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 126 bytes (1 switches on core 4)
+[pid: 1718|app: 0|req: 4/23] 219.132.138.58 () {52 vars in 1196 bytes} [Tue Jan 21 16:44:59 2020] POST /xadmin/article/tags/add/ => generated 0 bytes in 86 msecs (HTTP/1.1 302) 8 headers in 543 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 14/24] 180.163.220.68 () {44 vars in 972 bytes} [Tue Jan 21 16:44:59 2020] GET /xadmin/article/tags/add => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 130 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 14/25] 219.132.138.58 () {46 vars in 1199 bytes} [Tue Jan 21 16:44:59 2020] GET /xadmin/article/tags/ => generated 30247 bytes in 134 msecs (HTTP/1.1 200) 9 headers in 625 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 15/26] 219.132.138.58 () {42 vars in 796 bytes} [Tue Jan 21 16:44:59 2020] GET /xadmin/jsi18n/ => generated 7722 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 16/27] 180.163.220.68 () {44 vars in 974 bytes} [Tue Jan 21 16:45:00 2020] GET /xadmin/article/tags/add/ => generated 4403 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 17/28] 180.163.220.4 () {44 vars in 959 bytes} [Tue Jan 21 16:45:02 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 5)
+[pid: 1720|app: 0|req: 8/29] 42.236.10.125 () {44 vars in 965 bytes} [Tue Jan 21 16:45:03 2020] GET /xadmin/article/tags/ => generated 4399 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 9/30] 42.236.10.125 () {44 vars in 955 bytes} [Tue Jan 21 16:45:07 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 3)
+[pid: 1720|app: 0|req: 10/31] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:16 2020] POST /xadmin/settings/user => generated 0 bytes in 65 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 4)
+[pid: 1720|app: 0|req: 11/32] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:45:20 2020] POST /xadmin/settings/user => generated 0 bytes in 54 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 2)
+[pid: 1720|app: 0|req: 12/33] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:25 2020] POST /xadmin/settings/user => generated 0 bytes in 55 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 18/34] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:45:28 2020] POST /xadmin/settings/user => generated 0 bytes in 54 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 19/35] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:34 2020] POST /xadmin/settings/user => generated 0 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 2)
+[pid: 1719|app: 0|req: 20/36] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:45:39 2020] POST /xadmin/settings/user => generated 0 bytes in 50 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 21/37] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:42 2020] POST /xadmin/settings/user => generated 0 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 22/38] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:47 2020] POST /xadmin/settings/user => generated 0 bytes in 51 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 23/39] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:45:51 2020] POST /xadmin/settings/user => generated 0 bytes in 56 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 24/40] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:46:48 2020] POST /xadmin/settings/user => generated 0 bytes in 51 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 25/41] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:46:52 2020] POST /xadmin/settings/user => generated 0 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 2)
+[pid: 1719|app: 0|req: 26/42] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:46:56 2020] POST /xadmin/settings/user => generated 0 bytes in 53 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 27/43] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:10 2020] POST /xadmin/settings/user => generated 0 bytes in 53 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 28/44] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:16 2020] POST /xadmin/settings/user => generated 0 bytes in 54 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 29/45] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:21 2020] POST /xadmin/settings/user => generated 0 bytes in 55 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 30/46] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:47:26 2020] POST /xadmin/settings/user => generated 0 bytes in 51 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 31/47] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:29 2020] POST /xadmin/settings/user => generated 0 bytes in 50 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 2)
+[pid: 1719|app: 0|req: 32/48] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:47:35 2020] POST /xadmin/settings/user => generated 0 bytes in 49 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 33/49] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:38 2020] POST /xadmin/settings/user => generated 0 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 34/50] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:44 2020] POST /xadmin/settings/user => generated 0 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 35/51] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:47:47 2020] POST /xadmin/settings/user => generated 0 bytes in 55 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 36/52] 219.132.138.58 () {52 vars in 1117 bytes} [Tue Jan 21 16:47:51 2020] POST /xadmin/settings/user => generated 0 bytes in 54 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 37/53] 219.132.138.58 () {52 vars in 1118 bytes} [Tue Jan 21 16:47:54 2020] POST /xadmin/settings/user => generated 0 bytes in 55 msecs (HTTP/1.1 200) 6 headers in 224 bytes (1 switches on core 2)
+[pid: 1719|app: 0|req: 38/54] 219.132.138.58 () {44 vars in 940 bytes} [Tue Jan 21 16:47:57 2020] GET /xadmin/article/articlepost/ => generated 53537 bytes in 219 msecs (HTTP/1.1 200) 8 headers in 541 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 39/55] 219.132.138.58 () {42 vars in 804 bytes} [Tue Jan 21 16:47:58 2020] GET /xadmin/jsi18n/ => generated 7722 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 3)
+[pid: 1719|app: 0|req: 40/56] 42.236.10.114 () {38 vars in 891 bytes} [Tue Jan 21 16:48:02 2020] GET /xadmin/article/articlepost => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 133 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 13/57] 42.236.10.114 () {38 vars in 893 bytes} [Tue Jan 21 16:48:02 2020] GET /xadmin/article/articlepost/ => generated 4406 bytes in 11 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 1720|app: 0|req: 14/58] 42.236.10.114 () {44 vars in 977 bytes} [Tue Jan 21 16:48:02 2020] GET /xadmin/article/articlepost => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 133 bytes (1 switches on core 1)
+[pid: 1719|app: 0|req: 41/59] 42.236.10.125 () {42 vars in 873 bytes} [Tue Jan 21 16:48:02 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 15/60] 42.236.10.114 () {46 vars in 1068 bytes} [Tue Jan 21 16:48:02 2020] GET /xadmin/article/articlepost/ => generated 4406 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 1720|app: 0|req: 16/61] 42.236.10.114 () {44 vars in 962 bytes} [Tue Jan 21 16:48:03 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 4)
+[pid: 1720|app: 0|req: 17/62] 219.132.138.58 () {44 vars in 921 bytes} [Tue Jan 21 16:48:18 2020] GET /xadmin/logout/ => generated 2897 bytes in 61 msecs (HTTP/1.1 200) 6 headers in 298 bytes (1 switches on core 2)
+[pid: 1720|app: 0|req: 18/63] 219.132.138.58 () {42 vars in 747 bytes} [Tue Jan 21 16:48:18 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 10 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 42/64] 180.163.220.5 () {38 vars in 865 bytes} [Tue Jan 21 16:48:23 2020] GET /xadmin/logout => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 0)
+[pid: 1720|app: 0|req: 19/65] 180.163.220.5 () {44 vars in 951 bytes} [Tue Jan 21 16:48:24 2020] GET /xadmin/logout => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 0)
+[pid: 1718|app: 0|req: 5/66] 180.163.220.5 () {44 vars in 953 bytes} [Tue Jan 21 16:48:24 2020] GET /xadmin/logout/ => generated 2894 bytes in 7 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 4)
+[pid: 1719|app: 0|req: 43/67] 180.163.220.5 () {42 vars in 859 bytes} [Tue Jan 21 16:48:25 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 44/68] 180.163.220.4 () {38 vars in 865 bytes} [Tue Jan 21 16:48:34 2020] GET /xadmin/logout => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 4)
+[pid: 1720|app: 0|req: 20/69] 180.163.220.4 () {38 vars in 867 bytes} [Tue Jan 21 16:48:34 2020] GET /xadmin/logout/ => generated 2894 bytes in 8 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 0)
+[pid: 1719|app: 0|req: 45/70] 180.163.220.4 () {44 vars in 951 bytes} [Tue Jan 21 16:48:35 2020] GET /xadmin/logout => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 120 bytes (1 switches on core 4)
+[pid: 1718|app: 0|req: 6/71] 180.163.220.4 () {44 vars in 953 bytes} [Tue Jan 21 16:48:35 2020] GET /xadmin/logout/ => generated 2894 bytes in 6 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 5)
+[pid: 1719|app: 0|req: 46/72] 180.163.220.67 () {42 vars in 861 bytes} [Tue Jan 21 16:48:35 2020] GET /xadmin/jsi18n/ => generated 4393 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 4)
+invalid request block size: 21573 (max 8192)...skip
+-- unavailable modifier requested: 3 --
+-- unavailable modifier requested: 3 --
+-- unavailable modifier requested: 3 --
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+-- unavailable modifier requested: 3 --
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+[pid: 1720|app: 0|req: 21/77] 47.92.98.236 () {34 vars in 444 bytes} [Wed Jan 22 03:32:54 2020] GET / => generated 32293 bytes in 95 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 5)
+[pid: 1720|app: 0|req: 22/78] 47.97.204.168 () {34 vars in 444 bytes} [Wed Jan 22 03:47:47 2020] GET / => generated 32293 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+invalid request block size: 20047 (max 8192)...skip
+invalid request block size: 21573 (max 8192)...skip
+invalid request block size: 16709 (max 8192)...skip
+invalid request block size: 16709 (max 8192)...skip
