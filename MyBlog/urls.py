@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-
+from django.conf.urls.static import static
+from django.conf import settings
 import xadmin
 from xadmin.plugins import xversion
 
@@ -26,11 +27,11 @@ xversion.register_models()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'xadmin/', xadmin.site.urls),
+    path(r'mdeditor/', include('mdeditor.urls')),  # 富文本编辑器
 
     path('', include('article.urls', namespace='article')),
 ]
 
-
-
-
-
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

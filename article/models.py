@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User  # 导入内建的User模型。
-
+from mdeditor.fields import MDTextField
 
 # Create your models here.
 
@@ -49,7 +49,8 @@ class ArticlePost(models.Model):
     title = models.CharField(max_length=255, verbose_name='标题')
 
     # 文章正文。保存大量文本使用 TextField
-    body = models.TextField(verbose_name='正文')
+    body = MDTextField(verbose_name='正文')
+    # body = models.TextField(verbose_name='正文')
 
     # 文章创建时间。参数 auto_now_add=True 每当对象被创建时，设为当前日期，常用于保存创建日期(注意，它是不可修改的)。
     created_time = models.DateField(auto_now_add=True, verbose_name='创建时间')

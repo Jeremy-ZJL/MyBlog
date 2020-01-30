@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import ArticlePost  # 模型类
 from .models import Tags
 from django.core.paginator import Paginator
