@@ -16,8 +16,8 @@
         </div>
         <div class="post-copyright-link"><span class="post-copyright-link-name">本文链接: </span>
             <span class="post-copyright-link-value">
-                <a href="{% url 'article:article_detail' article.id %}">
-                    www.jeremyzhang.xyz{% url 'article:article_detail' article.id %}
+                <a href="{% url 'article:detail' article.id %}">
+                    www.jeremyzhang.xyz{% url 'article:detail' article.id %}
                 </a>
             </span>
         </div>
@@ -48,7 +48,7 @@
             {% if article_previous.id %}
                 {# 如果有上一篇才显示 #}
                 <div class="paginator-post-prev">
-                    <a class="paginator-post-prev__a" href="{% url 'article:article_detail' article_previous.id %}">
+                    <a class="paginator-post-prev__a" href="{% url 'article:detail' article_previous.id %}">
                         <i class="fa fa-chevron-left"></i>
                         <span>{{ article_previous.title }}</span>
                     </a>
@@ -58,7 +58,7 @@
             {% if article_next.title %}
                 {# 如果有下一篇才显示 #}
                 <div class="paginator-post-next">
-                    <a class="paginator-post-next__a" href="{% url 'article:article_detail' article_next.id %}">
+                    <a class="paginator-post-next__a" href="{% url 'article:detail' article_next.id %}">
                         <span>{{ article_next.title }}</span>
                         <i class="fa fa-chevron-right"></i>
                     </a>

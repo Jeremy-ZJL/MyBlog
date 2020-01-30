@@ -42,7 +42,7 @@ def indexViews(request):
     return render(request, 'index.html', content)
 
 
-def article_detail(request, aid):
+def detail(request, aid):
     """
     文章详情
     :param request:
@@ -75,7 +75,7 @@ def article_detail(request, aid):
                'article_previous': article_previous,
                'article_next': article_next
                }
-    return render(request, 'article_detail.html', content)
+    return render(request, 'detail.html', content)
 
 
 # 文章归档
