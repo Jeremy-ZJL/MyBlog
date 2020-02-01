@@ -85,5 +85,3 @@ def archive(request, year, month):
 
 
 
-
-

@@ -166,8 +166,8 @@ MDEDITOR_CONFIGS = {
         'flow_chart': True,  # 是否开启流程图功能
         'sequence': True,  # 是否开启序列图功能
         'watch': True,  # 实时预览
-        'lineWrapping': False,  # 自动换行
-        'lineNumbers': False  # 行号
+        'lineWrapping': True,  # 自动换行
+        'lineNumbers': True  # 行号
     }
 }
 
